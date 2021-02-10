@@ -20,14 +20,14 @@ class Person {
 //class constructor
 constructor(name,city,age){
 this.name=name;
-this.name=city;
-this.name= age;
+this.city=city;
+this.age= age;
 }
 
 
 //printing the value of the constructor
 greeting(){
-    console.log(`This is a test and the element is ${this.name} and ${this.age} and ${this.city}` )
+    console.log(`This is a test and the element is ${this.name} and ${this.age} and ${this.city}` );
 }
 }
 

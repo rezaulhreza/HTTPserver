@@ -4,7 +4,7 @@
 const Person = require('./person')
 
 //instance of the object
-const Person1 = new Person('Test',' OK','20')
+const Person1 = new Person('Test','20','24')
 
 
 /// assigning the methd to the  obejct instance as the object's value
