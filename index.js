@@ -1,6 +1,7 @@
 
-//create object / cal Person
-const Person = require('./Person')
+//create object / cal Person.
+
+const Person = require('./person')
 
 //instance of the object
 const Person1 = new Person('Test',' OK')
