@@ -2,7 +2,7 @@
 
 // const Person ={
 
-//     name:'Peter',
+//     name:'Thomas',
 //     city:'London',
 //     Age: '30'
 // }
@@ -13,14 +13,15 @@
 
 // })
 
-console.log(__dirname,__filename);
+// console.log(__dirname,__filename);
 
    
 class Person {
 //class constructor
-constructor(name,city){
-this.name=name
+constructor(name,city,age){
+this.name=name;
 this.name=city;
+this.name= age;
 }
 
 
