@@ -24,6 +24,11 @@ const logger = new Logger()
 
 logger.on('test', (data) => console.log('called listener', data))
 
-//call log method
+//call log method with unique id
 
+logger.log('Test done')
+logger.log('Test done')
+logger.log('Test done')
+logger.log('Test done')
+logger.log('Test done')
 logger.log('Test done')
