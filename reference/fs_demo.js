@@ -15,7 +15,9 @@ const path = require ('path')
 // it Asynchronously writes data to a file, replacing the file if it already exists.
 
 
-fs.writeFile(path.join(__dirname,'/demo','hello.txt'), 'Test done',err =>{
+fs.writeFile(path.join(__dirname,'/demo','hello.txt'),
+ 'test done again',
+ err =>{
     if(err) throw err;
     console.log('Folder is created and file written...');
 
