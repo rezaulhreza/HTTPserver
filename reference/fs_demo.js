@@ -22,3 +22,16 @@ fs.writeFile(path.join(__dirname,'/demo','hello.txt'),
     console.log('Folder is created and file written...');
 
 });
+
+
+//file append
+//Asynchronously append data to a file, 
+//creating the file if it does not exist.
+
+fs.appendFile(path.join(__dirname,'/demo','hello.txt'),
+ 'test done again',
+ err =>{
+    if(err) throw err;
+    console.log('Folder is created and file written...');
+
+});
