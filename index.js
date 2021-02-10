@@ -1,6 +1,9 @@
 
 //create object / cal Person.
 
+//calling files this way is common js
+//import is on es6/+
+
 const Person = require('./person')
 
 //instance of the object
