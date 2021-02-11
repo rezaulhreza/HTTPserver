@@ -1,6 +1,7 @@
 const http = require ('http')
 const path = require ('path')
-const fs  = require ('fs')
+const fs  = require ('fs');
+const { extname } = require('path');
 
 //Create a server object , putting that in a variable called server
 
@@ -50,33 +51,37 @@ const server =http.createServer((req,res)  => {
 //    res.end(JSON.stringify(users))
 //     }
 
-
+//making the file path dynamic
 //Build file path
 
+//setting this will allow the user to land on index.html page 
+//else whatever the url is
 
+let filePath = path.join(__dirname,'public',
+ req.url ==='/' ? 'index.html': req.url)
 
+//  console.log(filePath)
+//  res.end() 
 
+//FILE EXTENSION
+let extname = path.extname(filePath)
 
+//INITIAL content type
 
+let contentType = 'text/html'
 
-
-
-
-
-
-
-
-
-
-
+//check file extension and set the content type accordingly
 
 
 
 });
+
+
+
+
+
 //now this request needs to be listen on a port
 // putting port inside a variable
-
-
 // ITS GONNA FIRST LOOK AT THE ENVIRONMENT variable 
 // if not found it will run on port 5000
 const PORT = process.env.PORT || 5000
