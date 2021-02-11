@@ -72,7 +72,29 @@ let contentType = 'text/html'
 
 //check file extension and set the content type accordingly
 
+switch (extname) {
+    case '.js':
+        contentType = 'text/javascript'
+        break;
 
+        case '.css':
+        contentType = 'text/css'
+        break;
+
+
+        case '.json':
+        contentType = 'application/json'
+        break;
+
+        case '.jpg':
+            contentType = 'image/png'
+            break;
+    
+
+        case '.php':
+        contentType = 'application/x-httpd-php'
+        break;
+}
 
 });
 
