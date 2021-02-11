@@ -15,20 +15,33 @@
 
 // Person1.greeting();
 
+const http = require ('http')
+const path = require ('path')
+const fs  = require ('fs')
 
-const Logger = require ('./logger')
+//Create a server object , putting that in a variable called server
 
-//Logger is a class so class instance needs to be created
+// this is gonna take ina function with request and response
+const server =http.createServer((req,res)  => {
 
-const logger = new Logger()
 
-logger.on('test', (data) => console.log('called listener', data))
+    //this will hang the browser because it didn't get any response to the browser
+    // console.log(req.url)
 
-//call log method with unique id
+    //directed to index
+    if(req.url==='/'){
+        res.end('<h1 align="center">Hello</h1><br><p>This is a test</p>')
+    }
 
-logger.log('Test done')
-logger.log('Test done')
-logger.log('Test done')
-logger.log('Test done')
-logger.log('Test done')
-logger.log('Test done')
+})
+//now this request needs to be listen on a port
+// putting port inside a variable
+
+
+// ITS GONNA FIRST LOOK AT THE ENVIRONMENT variable 
+// if not found it will run on port 5000
+const PORT = process.env.PORT || 5000
+
+//CALLBACK WITH A CONSOLE LOG
+server.listen(PORT),() => CONSOLE.LOG('Server Running on port ' , PORT)
+

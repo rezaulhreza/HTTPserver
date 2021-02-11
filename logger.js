@@ -24,4 +24,22 @@ class Logger extends EventEmitter{
     }
 }
 
-module.exports = Logger
+// module.exports = Logger
+
+
+// const Logger = require ('./logger')
+
+//Logger is a class so class instance needs to be created
+
+const logger = new Logger()
+
+logger.on('test', (data) => console.log('called listener', data))
+
+//call log method with unique id
+
+logger.log('Test done')
+logger.log('Test done')
+logger.log('Test done')
+logger.log('Test done')
+logger.log('Test done')
+logger.log('Test done')
