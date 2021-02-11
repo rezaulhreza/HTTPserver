@@ -5,7 +5,7 @@ const { extname } = require('path');
 
 //Create a server object , putting that in a variable called server
 
-// this is gonna take ina function with request and response
+// this is gonna take in a function with request and response
 const server =http.createServer((req,res)  => {
 
 
@@ -95,6 +95,45 @@ switch (extname) {
         contentType = 'application/x-httpd-php'
         break;
 }
+
+//readFile
+
+fs.readFile(filePath,(err,content) => {
+
+    if(err){
+
+        //if the error code is enoent
+        if(err.code=='ENOENT'){
+            //PAGE NOT FOUND
+fs.readFile(path.join(__dirname,'public','404.html'),
+(err,content) =>{
+
+//write the file on the header and load it
+
+res.writeHead(200, {  'Content-Type' : 'text/html' })
+
+res.end(content, 'utf8')
+
+})
+
+}
+
+
+        //else
+
+        else{
+            //error in server
+res.writeHead(200)
+res.end(`Server Error: ${err.code}`)
+ }
+} 
+//if there is no error
+else{
+    //successful request and response
+    res.writeHead(200, {  'Content-Type' : contentType })
+    res.end(content, 'utf8')
+}
+})
 
 });
 
