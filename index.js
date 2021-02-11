@@ -1,20 +1,3 @@
-
-// //create object / cal Person.
-
-// //calling files this way is common js
-// //import is on es6/+
-
-// const Person = require('./person')
-
-// //instance of the object
-// const Person1 = new Person('Test','20','24')
-
-
-// /// assigning the method to the  object instance as the object's value
-// //itself are the property of method greeting declared in person.js
-
-// Person1.greeting();
-
 const http = require ('http')
 const path = require ('path')
 const fs  = require ('fs')
@@ -29,11 +12,18 @@ const server =http.createServer((req,res)  => {
     // console.log(req.url)
 
     //directed to index
-    if(req.url==='/'){
-        res.end('<h1 align="center">Hello</h1><br><p>This is a test</p>')
-    }
+    if(req.url==='/about') {
 
-})
+        fs.readFile(path.join(__dirname,'public','about.html'),
+        (err,content) => {
+            res.writeHead(200,{ 'Content-Type' : 'text/html'})
+            res.end(content)
+        }
+        )
+
+   
+    }
+});
 //now this request needs to be listen on a port
 // putting port inside a variable
 
@@ -43,5 +33,5 @@ const server =http.createServer((req,res)  => {
 const PORT = process.env.PORT || 5000
 
 //CALLBACK WITH A CONSOLE LOG
-server.listen(PORT),() => CONSOLE.LOG('Server Running on port ' , PORT)
+server.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
 
