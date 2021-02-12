@@ -1,2 +1,2 @@
-# HTTPserver
-HTTP server from scratch without Express and deployed to Heroku.
+# Moose Coffe
+A coffe shop based in Dover, Kent, United Kingdom.
