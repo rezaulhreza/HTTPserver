@@ -1,2 +1,3 @@
 # Moose Coffe
-A coffe shop based in Dover, Kent, United Kingdom.
+Just for fun, technically unsophisticated
+
